@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+$base-color: #404040;
+$accent-color: #6BFFE6;
+$white-color: #f9f9f9;
+$gray-color: #ccc;
+
+*{
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+body{
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0 24px;
+    background-color: $base-color;
+    background-image: radial-gradient(at 88% 0%,  $accent-color, transparent 50%),
+    radial-gradient(at 30% 80%, $accent-color, transparent 50%);
+    color: #000;
+    font-family: 'Roboto';
+}
+.Login{
+    position: fixed;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 90%;
+    padding: 70px 30px 44px;
+    border-radius: 1.25rem;
+    background: $white-color;
+    text-align: center;
+    img {
+        width: 150px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 32px;
+        margin: 0 0 25px;
+    }
+    h3 {
+        color: rgba(0, 0, 0, 0.38);
+        margin: 0 0 6px;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+}
+.login-form{
+    display: grid;
+    gap: 30px;
+    place-items: center;
+    width: 100%;
+    margin: 0;
+    input, button {
+        height: 56px;
+        outline: none;
+        padding: 0;
+        font-family: inherit;
+    }
+    input {
+        width: 240px;
+        background: transparent;
+        border: 2px solid transparent;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+        font-size: 18px;
+        padding: 0;
+        text-align: center;
+        transition: all 0.3s;
+    }
+    input:hover {
+        border-bottom: 2px solid $accent-color;
+    }
+    
+    input:focus {
+        border-bottom: 2px solid $accent-color;
+    }
+    button {
+        cursor: pointer;
+        width: 70%;
+        height: 56px;
+        background: $base-color;
+        color: $white-color;
+        border: 0;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        transition: all 0.3s;
+    }
+    button:hover {
+        background-color: $accent-color;
+    }
+    a {
+        color: $base-color;
+        font-size: 1rem;
+        text-align: left;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+    a:hover{
+        color: $accent-color;
+    }  
+}
+
+@media (min-width: 450px){
+    .Login{
+        width: 380px;
+    }
+}
+
+@media (min-width: 500px){
+    body{
+        padding: 0;
+    }
+}
+
+@media (min-width: 1200px){
+    .Login{
+        width: 25%;
+    }
+}
