@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+$base-color: #404040;
+$accent-color: #6BFFE6;
+$white-color: #f9f9f9;
+$gray-color: #ccc;
+
+*{
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+body {
+    height: 100%;
+    background-color:$base-color;
+    font-family: 'Roboto', sans-serif;
+    background-image: radial-gradient(at 88% 0%,  $accent-color, transparent 50%),
+    radial-gradient(at 30% 80%, $accent-color, transparent 50%);
+    display: grid;
+    place-items: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    h1 {
+        margin: 0px 0px 15px 0px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        color: black;
+    }
+    h2 {
+        margin: 20px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        color: black;
+    }
+    label {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    input{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        outline: none;
+    }
+    input:hover{
+        outline: none;
+    }
+    input:focus{
+        outline: none;
+    }
+}
+.wrapper{
+    box-shadow: 0 2px 25px rgba(91, 91, 91, 0.5);
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 100%s;
+    height: 780px;
+    overflow: hidden;
+    background: $white-color;
+    border-radius: 1.25rem;
+}
+.directory{
+    width: 25%;
+    height: 100%;
+    padding: 2%;
+    input {
+        bottom: 30px;
+        border: none;
+        padding-left: 30px;
+        background: transparent;
+        transition: all .25s ease;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23bdbdbd' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: left;
+    }
+}
+.preview{
+    width: 75%;
+    border-left: 1px solid $gray-color;
+}
+.navigation{
+    width: 100%;
+    height: 15%;
+    border-bottom: 1px solid $gray-color;
+    position: relative;
+    button {
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 50px;
+        color: $white-color;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        width: 15%;
+        height: 35px;
+        position: absolute;
+        background: $base-color;
+        border: 0;
+        border-radius: 50px;
+    }
+    button:hover {
+        background-color: $accent-color;
+    }
+}
+.passwords{
+    display: flex;
+    flex-flow: row nowrap;
+    height: 85%;
+}
+.passwords_name{
+    width: 35%;  
+}
+.passwords_info{
+    padding: 4%;
+    padding-bottom: none;
+    width: 65%;
+    border-left: 1px solid $gray-color;
+    overflow: hidden;
+    position: relative;
+    input {
+        bottom: 30px;
+        border: none;
+        padding: 10px;
+        background: transparent;
+        transition: all .25s ease;
+    }
+    button {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='utf-8'?%3e%3c!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3e%3csvg width='800px' height='800px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M20.0651 7.39423L7.09967 20.4114C6.72438 20.7882 6.21446 21 5.68265 21H4.00383C3.44943 21 3 20.5466 3 19.9922V18.2987C3 17.7696 3.20962 17.2621 3.58297 16.8873L16.5517 3.86681C19.5632 1.34721 22.5747 4.87462 20.0651 7.39423Z' stroke='%23323232' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M15.3097 5.30981L18.7274 8.72755' stroke='%23323232' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+        background-repeat: no-repeat; 
+        background-position: right 0 center;
+        background-size: 20px 20px;
+        cursor: pointer;
+        color: $base-color;
+        border: 2px solid;
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;
+        cursor: pointer;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        margin: 4%;
+        margin-right: 5%;
+    }
+    button:hover {
+        color: $accent-color;
+    }
+}
+
+
