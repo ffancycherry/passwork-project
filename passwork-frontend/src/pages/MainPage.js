@@ -1,6 +1,12 @@
 //главная страница
 import React from 'react';
-import "../frontend/main-page.scss";
+import "../style/main-page.scss";
+import { StyledEngineProvider } from '@mui/material/styles';                  
+import  Folders from '../components/Folders.jsx';   
+import First from '../components/bdFirst';
+import Second from '../components/bdSecond';
+import Breadcrumb from '../components/Breadcrumb';
+
 
 const Main = () => {
   return (
@@ -8,28 +14,32 @@ const Main = () => {
         
       <section className="wrapper">
         
-          <div className="directory">
-              <input type="text" placeholder="Найти"/>
+          <nav className="directory">
+            <input type="text" placeholder="Найти"/>
               <hr/>
+              <Folders nodes = {First}/>
+              <hr/>
+              <Folders nodes = {Second}/>
+            
+              {/*
               <div className='label_button'>
                 <h2>ОРГАНИЗАЦИЯ</h2>
+                
                 <button className='add'></button>
               </div>
               <hr/>
               <div className='label_button'>
                 <h2>ЛИЧНОЕ</h2>
                 <button className='add'></button>
-              </div>
+              </div>*/}
               
-          </div>
+          </nav>
          
           <div className="preview">
               
               <div className="navigation">  
                   <div>
-                    <h2>Home</h2>
-                    <h2>Components</h2>
-                    <h2>Breadcrumb</h2>
+                    <Breadcrumb />
                   </div> 
                   <button>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -43,8 +53,7 @@ const Main = () => {
                   <div className="passwords_name">
                       <h2>ПАРОЛИ</h2>
                       <button>password 1</button>
-                      <button>password 2</button>
-                      <button>password 3</button>
+                      
                   </div>
                 
                   <div className="passwords_info">

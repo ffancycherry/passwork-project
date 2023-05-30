@@ -1,9 +1,7 @@
 
 //форма входа
-import "../frontend/login-page.scss";
+import "../style/login-page.scss";
 import {Link} from 'react-router-dom';
-
-
 
 function Login () {
   return (

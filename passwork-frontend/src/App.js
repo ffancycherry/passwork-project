@@ -1,8 +1,8 @@
 //маршрутизация 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './pages/login';
-import Main from './pages/main-page';
+import Login from './pages/Login';
+import Main from './pages/MainPage';
 
 function App() {
   return (
