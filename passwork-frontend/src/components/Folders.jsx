@@ -1,6 +1,6 @@
 //рабочий варинт дерва папока, в теории должен брать информацию из bdFirst и bdSecond
 
-import * as React from 'react';
+import React from 'react';
 import TreeView from '@material-ui/lab/TreeView';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';

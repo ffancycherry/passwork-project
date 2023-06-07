@@ -1,14 +1,19 @@
 //главная страница
 import React from 'react';
 import "../style/main-page.scss";
-import { StyledEngineProvider } from '@mui/material/styles';                  
+import { useState } from 'react';
+//import { StyledEngineProvider } from '@mui/material/styles';                  
 import  Folders from '../components/Folders.jsx';   
 import First from '../components/bdFirst';
 import Second from '../components/bdSecond';
+import Modal from '../components/Modal';
+import InfoPasswords from '../components/InfoPasswords';
 import Breadcrumb from '../components/Breadcrumb';
 
 
+
 const Main = () => {
+  const [modalActive, setModalActive] = useState(true)
   return (
     <div className="Main">
         
@@ -39,14 +44,15 @@ const Main = () => {
               
               <div className="navigation">  
                   <div>
-                    <Breadcrumb />
+                    
                   </div> 
-                  <button>
+                  <button onClick={() => setModalActive(true)}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                       <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
                     </svg>
                     <span>Добавить пароль</span>
                   </button>
+                  
               </div>
               <div className="passwords">
                   
@@ -57,23 +63,14 @@ const Main = () => {
                   </div>
                 
                   <div className="passwords_info">
-                      <div className="passwords_info_idt">
-                      <h1>Name profile</h1>
-                      <button></button>
-                      </div>
-                      <label>Логин</label>
-                      <input type="text"/>
-                      <hr/>
-                      <label>Пароль</label>
-                      <input type="password"/>
-                      <hr/>
-                      <label>URL</label>
-                      <input type="url" />
-                      <hr/>                
+                        <InfoPasswords />           
                   </div>
               </div>
           </div>
       </section>
+      <Modal active={modalActive} setActive={setModalActive}>
+        <InfoPasswords/>
+      </Modal>
     </div>
   );
 }

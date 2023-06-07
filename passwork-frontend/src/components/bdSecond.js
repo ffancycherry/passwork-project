@@ -22,7 +22,12 @@ const Second = {
             ]
           },
         ],
+        
       },
+      {
+        id: '6',
+        name: 'child-6',
+      }
     ],
   };
  

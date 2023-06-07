@@ -1,7 +1,6 @@
 //маршрутизация 
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './pages/Login';
+//import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from './pages/MainPage';
 
 function App() {
