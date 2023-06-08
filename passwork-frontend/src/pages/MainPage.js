@@ -6,14 +6,22 @@ import { useState } from 'react';
 import  Folders from '../components/Folders.jsx';   
 import First from '../components/bdFirst';
 import Second from '../components/bdSecond';
-import Modal from '../components/Modal';
+//import Modal from '../components/ModalS';
+import useModal from '../components/useModalS';
+import ModalP from '../components/ModalPass';
 import InfoPasswords from '../components/InfoPasswords';
 import Breadcrumb from '../components/Breadcrumb';
 
 
 
 const Main = () => {
-  const [modalActive, setModalActive] = useState(true)
+  
+  //modalF
+  const [show, setShow] = useState(false);
+  const openModal = () => setShow(true);
+  const closeModal = () => setShow(false);
+
+
   return (
     <div className="Main">
         
@@ -23,8 +31,10 @@ const Main = () => {
             <input type="text" placeholder="Найти"/>
               <hr/>
               <Folders nodes = {First}/>
+              <button className='add'></button>
               <hr/>
               <Folders nodes = {Second}/>
+              <button className='add'></button>
             
               {/*
               <div className='label_button'>
@@ -46,7 +56,8 @@ const Main = () => {
                   <div>
                     
                   </div> 
-                  <button onClick={() => setModalActive(true)}>
+                  {/* toggle for modalS*/}
+                  <button onClick={openModal}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                       <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
                     </svg>
@@ -68,10 +79,14 @@ const Main = () => {
               </div>
           </div>
       </section>
-      <Modal active={modalActive} setActive={setModalActive}>
-        <InfoPasswords/>
-      </Modal>
+      <ModalP closeModal={closeModal} show={show} />
+      {/* <Modal
+        isShowing={isShowing}
+        hide={toggle}
+        for modalS
+      /> */}
     </div>
+    
   );
 }
 

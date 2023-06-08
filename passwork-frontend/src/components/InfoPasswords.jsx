@@ -17,7 +17,6 @@ function InfoPasswords (){
             <input type="url" />
             <hr/>                
         </>       
-    );
-            
+    );         
 }
 export default InfoPasswords;
