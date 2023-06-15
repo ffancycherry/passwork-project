@@ -17,7 +17,7 @@
     transition: opacity 0.2s ease;
 }
   
-.modal {
+.modal-pass {
     width: 40%;
     height: 50%;
     position: fixed;
@@ -30,21 +30,21 @@
     box-shadow: 0 2px 25px rgba(91, 91, 91, 0.5);
     font-family: Helvetica, Arial, sans-serif;
 }
-.modal h4 {
+.modal-pass h4 {
     padding: 0;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
 }
-.modal label {
+.modal-pass label {
   
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
 }
-.modal input{
+.modal-pass input{
     width: 70%;
     bottom: 30px;
     border: none;
@@ -57,10 +57,10 @@
     font-size: 16px;
     outline: none;
 }
-.modal input:hover{
+.modal-pass input:hover{
     outline: none;
 }
-.modal input:focus{
+.modal-pass input:focus{
     outline: none;
 }
 .btnsave {
@@ -94,7 +94,7 @@
     border-radius: 50px;
     overflow: hidden;
 }
-.modal hr {
+.modal-pass hr {
     margin: 20px 0;
 }
 .info_mod {

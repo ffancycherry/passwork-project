@@ -11,7 +11,7 @@ with app.app_context():
     db.create_all()  
     db.session.commit()
 
-@app.route('/folders')
+@app.route('/folders', methods = ['GET'])
 def get_folders():
     folder = []
     folder_list = db.session.query(Folders.id, Folders.fname, Folders.parent_id).all()

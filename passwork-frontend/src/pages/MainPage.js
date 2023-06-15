@@ -6,20 +6,25 @@ import { useState } from 'react';
 import  Folders from '../components/Folders.jsx';   
 import First from '../components/bdFirst';
 import Second from '../components/bdSecond';
-//import Modal from '../components/ModalS';
-import useModal from '../components/useModalS';
 import ModalP from '../components/ModalPass';
+import ModalA from '../components/modalAdd';
 import InfoPasswords from '../components/InfoPasswords';
 import Breadcrumb from '../components/Breadcrumb';
+import {connect} from "react-redux";
+import Fold from '../components/folderss';
 
 
 
-const Main = () => {
-  
+
+const Main = (props) => {
+  console.log(props);
   //modalF
-  const [show, setShow] = useState(false);
-  const openModal = () => setShow(true);
-  const closeModal = () => setShow(false);
+  const [showAdd, setShowAdd] = useState(false);
+  const [showPass, setShowPass] = useState(false);
+  const openModalAdd = () => setShowAdd(true);
+  const openModalPass = () => setShowPass(true)
+  const closeModalAdd = () => setShowAdd(false);
+  const closeModalPass = () => setShowPass(false);
 
 
   return (
@@ -30,12 +35,26 @@ const Main = () => {
           <nav className="directory">
             <input type="text" placeholder="Найти"/>
               <hr/>
-              <Folders nodes = {First}/>
-              <button className='add'></button>
+              <div className='folders'>
+                <div className='folders-tree'>
+                  {/* <Folders nodes = {First}/> */}
+                  <Fold folder = {First} />
+                </div>
+                <div className='folder-add-btn'>
+                  <button className='add' onClick={openModalAdd}></button>
+                </div>
+                
+              </div>
               <hr/>
-              <Folders nodes = {Second}/>
-              <button className='add'></button>
-            
+              <div className='folders'>
+              <div className='folders-tree'>
+                  <Folders nodes = {Second}/>
+                </div>
+                <div className='folder-add-btn'>
+                  <button className='add' onClick={openModalAdd}></button>
+                </div>
+              </div>
+              
               {/*
               <div className='label_button'>
                 <h2>ОРГАНИЗАЦИЯ</h2>
@@ -57,7 +76,7 @@ const Main = () => {
                     
                   </div> 
                   {/* toggle for modalS*/}
-                  <button onClick={openModal}>
+                  <button onClick={openModalPass}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                       <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
                     </svg>
@@ -79,7 +98,8 @@ const Main = () => {
               </div>
           </div>
       </section>
-      <ModalP closeModal={closeModal} show={show} />
+      <ModalP closeModal={closeModalPass} show={showPass} />
+      <ModalA closeModal={closeModalAdd} show={showAdd} /> 
       {/* <Modal
         isShowing={isShowing}
         hide={toggle}
@@ -90,4 +110,6 @@ const Main = () => {
   );
 }
 
-export default Main;
+const mapStateToProps = ({api}) => ({api});
+
+export default connect(mapStateToProps)(Main);

@@ -84,6 +84,17 @@ body {
         background-position: left;
     }
 }
+.folders {
+    display: flex;
+    flex-direction: row;
+}
+.folders-tree {
+    width: 90%;
+}
+folders-add-btn {
+    width: 10%;
+    margin-top: none;
+}
 .label_button {
     display: flex;
     flex-direction: row;

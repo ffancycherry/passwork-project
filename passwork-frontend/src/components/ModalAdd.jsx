@@ -7,10 +7,10 @@ function ModalA(props) {
   return (
     <>
     <div className={show ? "overlay" : "hide"} onClick={closeModal} />
-      <div className={show ? "modal" : "hide"}>
+      <div className={show ? "modal-add" : "hide"}>
         <button className="btnexit" onClick={closeModal}>X</button>
         <h1>Создание папки</h1>
-        <div className="info_mod">
+        <div className="add_mod">
           <label>Название</label>
           <input type="text" id="folder-name"/>
           <hr/>

@@ -9,7 +9,7 @@ function ModalP(props) {
   return (
     <>
     <div className={show ? "overlay" : "hide"} onClick={closeModal} />
-      <div className={show ? "modal" : "hide"}>
+      <div className={show ? "modal-pass" : "hide"}>
         <button className="btnexit" onClick={closeModal}>X</button>
         <h1>Создание пароля</h1>
         
