@@ -12,7 +12,7 @@ const First = [
       },
       {
         id: 4,
-        fname: 'клиенты"',
+        fname: 'клиенты',
         parent_id: 1
       },
       {

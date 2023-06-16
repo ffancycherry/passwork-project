@@ -7,9 +7,9 @@ import  Folders from '../components/Folders.jsx';
 import First from '../components/bdFirst';
 import Second from '../components/bdSecond';
 import ModalP from '../components/ModalPass';
-import ModalA from '../components/modalAdd';
+import ModalA from '../components/ModalAdd';
 import InfoPasswords from '../components/InfoPasswords';
-import Breadcrumb from '../components/Breadcrumb';
+//import Breadcrumb from '../components/Breadcrumb';
 import {connect} from "react-redux";
 import Fold from '../components/folderss';
 
@@ -33,12 +33,12 @@ const Main = (props) => {
       <section className="wrapper">
         
           <nav className="directory">
-            <input type="text" placeholder="Найти"/>
-              <hr/>
+            {/* <input type="text" placeholder="Найти"/>
+              <hr/> */}
               <div className='folders'>
                 <div className='folders-tree'>
                   {/* <Folders nodes = {First}/> */}
-                  <Fold folder = {First} />
+                  <Fold folder = {First}/>
                 </div>
                 <div className='folder-add-btn'>
                   <button className='add' onClick={openModalAdd}></button>
@@ -48,7 +48,7 @@ const Main = (props) => {
               <hr/>
               <div className='folders'>
               <div className='folders-tree'>
-                  <Folders nodes = {Second}/>
+                  <Fold folder = {Second}/>
                 </div>
                 <div className='folder-add-btn'>
                   <button className='add' onClick={openModalAdd}></button>
