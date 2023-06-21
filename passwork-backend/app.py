@@ -2,10 +2,11 @@ from flask import jsonify
 from flask_sqlalchemy import SQLAlchemy
 from model import db, Folders, Passwords
 from config import create_app
+from flask_cors import CORS
 
 app = create_app()
 db.init_app(app)
-
+CORS(app)
 
 with app.app_context():
     db.create_all()  

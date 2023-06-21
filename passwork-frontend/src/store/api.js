@@ -1,10 +1,20 @@
-const BASE_URL = 'http://127.0.0.1:5000/folders';
+const BASE_URL = 'http://localhost:5000';
 
 export default class Api {
-    static getFolders() {
-        const url = BASE_URL;
-        return fetch(url, {
-            method: 'GET'
+    static async getFolders() {
+        const url = BASE_URL + "/folders";
+
+        const response = await fetch(url, {
+            method: 'GET',
+            mode: 'no-cors'
         });
+
+        const text = await response.text();
+        const json = await response.json();
+
+        console.log(text);
+        console.log(json);
+
+        return response;
     }
 }

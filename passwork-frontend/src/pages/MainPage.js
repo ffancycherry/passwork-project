@@ -3,21 +3,25 @@ import React from 'react';
 import "../style/main-page.scss";
 import { useState } from 'react';
 //import { StyledEngineProvider } from '@mui/material/styles';                  
-import  Folders from '../components/Folders.jsx';   
 import First from '../components/bdFirst';
-import Second from '../components/bdSecond';
 import ModalP from '../components/ModalPass';
 import ModalA from '../components/ModalAdd';
 import InfoPasswords from '../components/InfoPasswords';
 //import Breadcrumb from '../components/Breadcrumb';
-import {connect} from "react-redux";
+import {connect, useDispatch, useSelector} from "react-redux";
+import { useEffect } from 'react';
 import Fold from '../components/folderss';
-
-
+import { loadFolders } from '../redtest/action';
 
 
 const Main = (props) => {
   console.log(props);
+  const {folders} = useSelector((state) => state.data);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+        dispatch(loadFolders());
+  }, []);
   //modalF
   const [showAdd, setShowAdd] = useState(false);
   const [showPass, setShowPass] = useState(false);
@@ -25,7 +29,6 @@ const Main = (props) => {
   const openModalPass = () => setShowPass(true)
   const closeModalAdd = () => setShowAdd(false);
   const closeModalPass = () => setShowPass(false);
-
 
   return (
     <div className="Main">
@@ -38,23 +41,21 @@ const Main = (props) => {
               <div className='folders'>
                 <div className='folders-tree'>
                   {/* <Folders nodes = {First}/> */}
-                  <Fold folder = {First}/>
+                  <Fold folder = {folders}/>
                 </div>
                 <div className='folder-add-btn'>
                   <button className='add' onClick={openModalAdd}></button>
                 </div>
-                
               </div>
               <hr/>
-              <div className='folders'>
+              {/* <div className='folders'>
               <div className='folders-tree'>
                   <Fold folder = {Second}/>
                 </div>
                 <div className='folder-add-btn'>
                   <button className='add' onClick={openModalAdd}></button>
                 </div>
-              </div>
-              
+              </div> */}
               {/*
               <div className='label_button'>
                 <h2>ОРГАНИЗАЦИЯ</h2>
@@ -66,15 +67,9 @@ const Main = (props) => {
                 <h2>ЛИЧНОЕ</h2>
                 <button className='add'></button>
               </div>*/}
-              
           </nav>
-         
           <div className="preview">
-              
               <div className="navigation">  
-                  <div>
-                    
-                  </div> 
                   {/* toggle for modalS*/}
                   <button onClick={openModalPass}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -82,16 +77,12 @@ const Main = (props) => {
                     </svg>
                     <span>Добавить пароль</span>
                   </button>
-                  
               </div>
               <div className="passwords">
-                  
                   <div className="passwords_name">
                       <h2>ПАРОЛИ</h2>
                       <button>password 1</button>
-                      
                   </div>
-                
                   <div className="passwords_info">
                         <InfoPasswords />           
                   </div>
@@ -106,10 +97,9 @@ const Main = (props) => {
         for modalS
       /> */}
     </div>
-    
   );
 }
 
-const mapStateToProps = ({api}) => ({api});
+const mapStateToProps = ({data}) => ({data});
 
 export default connect(mapStateToProps)(Main);
